@@ -1,0 +1,81 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v1"
+    },
+    "exported_at": "2019-01-20T22:19:48+01:00",
+    "name": "JeakBot-Framework",
+    "author": "technik@fearnixx.de",
+    "description": "Plugin framework for TeamSpeak 3.\r\nUses the server query connection to connect to your TeamSpeak 3 server.",
+    "image": "registry.gitlab.com\/fearnixxgaming\/jeakbot\/jeakbot-framework-docker:latest",
+    "startup": "java -Xmx{{SERVER_XMX}}M -Xms{{SERVER_XMS}}M -cp 'jeakbot.jar:libraries\/*' {{EXTRA_JVM}} de.fearnixx.jeak.Main {{EXTRA_APP}}",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": \"Connected\"\r\n}",
+        "logs": "{\r\n    \"custom\": false,\r\n    \"location\": \"logs\/latest.log\"\r\n}",
+        "stop": "stop"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#! \/usr\/bin\/env ash\r\n# Files below \/mnt\/server\r\n\r\n# \/\/ Nothing to do \/\/ Install and update are in the entrypoint file.",
+            "container": "alpine:3.4",
+            "entrypoint": "ash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Additional application parameters",
+            "description": "JVM application parameters.",
+            "env_variable": "EXTRA_APP",
+            "default_value": "",
+            "user_viewable": 1,
+            "user_editable": 1,
+            "rules": "nullable|string|max:1200"
+        },
+        {
+            "name": "Additional JVM arguments",
+            "description": "JVM arguments",
+            "env_variable": "EXTRA_JVM",
+            "default_value": "",
+            "user_viewable": 1,
+            "user_editable": 1,
+            "rules": "nullable|string|max:1200"
+        },
+        {
+            "name": "MinRam (MB)",
+            "description": "Minimum RAM size in MB",
+            "env_variable": "SERVER_XMS",
+            "default_value": "100",
+            "user_viewable": 1,
+            "user_editable": 1,
+            "rules": "required|int|max:6000|min:100"
+        },
+        {
+            "name": "MaxRAM (MB)",
+            "description": "Maximum available RAM in MB.",
+            "env_variable": "SERVER_XMX",
+            "default_value": "1000",
+            "user_viewable": 1,
+            "user_editable": 1,
+            "rules": "required|int|max:6000|min:200"
+        },
+        {
+            "name": "Framework Version",
+            "description": "The framework version to install\/download.",
+            "env_variable": "JEAKBOT_VERSION",
+            "default_value": "1.0.0",
+            "user_viewable": 1,
+            "user_editable": 1,
+            "rules": "required|string|max:12|min:5"
+        },
+        {
+            "name": "Enable snapshots",
+            "description": "Whether or not to download the snapshot version.",
+            "env_variable": "JEAKBOT_SNAPSHOT",
+            "default_value": "false",
+            "user_viewable": 1,
+            "user_editable": 1,
+            "rules": "required|string|min:4|max:5"
+        }
+    ]
+}
