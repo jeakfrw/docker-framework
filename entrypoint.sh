@@ -19,7 +19,7 @@ DIST_REPO="https://nexus.fearnixx.de/repository/jeakbot-dist"
 
 ## Install / Update ##
 if [[ ! -e jeakbot.jar ]]; then
-    prinf "Installing Jeakbot V: ${VERSION}...\n"
+    printf "Installing Jeakbot V: ${VERSION}...\n"
     if ! curl -o "$ARTIFACT_NAME" "${DIST_REPO}/${ARTIFACT_NAME}"; then
         printf "Failed to download artifact!\n"
         exit 1
