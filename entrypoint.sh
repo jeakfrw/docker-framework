@@ -43,7 +43,7 @@ fi
 java -version
 
 # Replace Startup Variables
-# Example startup line: java -cp .:libraries -Xmx{{SERVER_XMX}}M -Xms{{SERVER_XMS}}M {{EXTRA_JVM}} de.fearnixx.jeak.Main ${JEAK_ARGS} {{EXTRA_APP}}
+# Example startup line: java -cp .:libraries -Xmx{{SERVER_XMX}}M -Xms{{SERVER_XMS}}M {{EXTRA_JVM}} de.fearnixx.jeak.Main {{EXTRA_APP}}
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 echo ":/home/container$ ${MODIFIED_STARTUP}"
 
