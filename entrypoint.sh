@@ -40,8 +40,8 @@ fi
 
 if [[ ! -e ./utils/trusted_roots.jks ]]; then
     echo "Building truststore"
-    curl -SsLo lets-encrypt-x3-cross-signed.pem https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt
     cd ./utils
+    curl -SsLo lets-encrypt-x3-cross-signed.pem https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt
     if ! ./create_keystore.sh; then
         echo "Failed to build keystore!"
     fi
