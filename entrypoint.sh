@@ -38,6 +38,16 @@ if [[ ! -e jeakbot.jar ]]; then
     fi
 fi
 
+if [[ ! -e ./utils/trusted_roots.jks ]]; then
+    echo "Building truststore"
+    curl -SsLo lets-encrypt-x3-cross-signed.pem https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem.txt
+    cd ./utils
+    if ! ./create_keystore.sh; then
+        echo "Failed to build keystore!"
+    fi
+    cd ..
+fi
+
 ## Startup ##
 # Output Current Java Version
 java -version
