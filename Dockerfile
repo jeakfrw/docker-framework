@@ -6,9 +6,9 @@
 FROM openjdk:11-jdk-slim
 MAINTAINER FearNixx Technik, <technik@fearnixx.de>
 
-RUN apk update \
-	&& apk upgrade \
-	&& apk add --no-cache --update curl ca-certificates openssl git tar unzip bash gcc \
+RUN apt update \
+	&& apt -y upgrade \
+	&& apt install -y curl ca-certificates openssl git tar unzip bash gcc \
 	&& adduser -D -h /home/container container
 
 
