@@ -15,7 +15,7 @@ if [[ "$JEAKBOT_SNAPSHOT" -eq "true" ]]; then
 fi
 
 ARTIFACT_NAME="jeakbot-${VERSION}.tar.gz"
-DIST_REPO="https://dl.fearnixx.de/jeakbot"
+DIST_REPO="https://nexus.fearnixx.de/repository/jeakbot-dist"
 
 ## Install / Update ##
 if [[ ! -e jeakbot.jar ]]; then
