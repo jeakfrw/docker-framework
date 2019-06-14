@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # /entypoint.sh
 ## ============================================== ##
-## Entrypoint script for the JeakBot docker image ##
+## Entrypoint script for the Jeak-Framework docker image ##
 ## ============================================== ##
 
 ## Prepare ##

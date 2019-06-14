@@ -7,7 +7,7 @@
     "name": "JeakBot-Framework",
     "author": "technik@fearnixx.de",
     "description": "Plugin framework for TeamSpeak 3.\r\nUses the server query connection to connect to your TeamSpeak 3 server.",
-    "image": "registry.gitlab.com\/fearnixxgaming\/jeakbot\/jeakbot-framework-docker:latest",
+    "image": "fearnixx\/jeak-pterodactyl:latest",
     "startup": "java -Xmx{{SERVER_XMX}}M -Xms{{SERVER_XMS}}M -cp 'jeakbot.jar:libraries\/*' {{EXTRA_JVM}} de.fearnixx.jeak.Main {{EXTRA_APP}}",
     "config": {
         "files": "{}",

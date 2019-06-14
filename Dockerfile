@@ -1,8 +1,9 @@
 ## ============================================================== ##
 ## Docker image for the JeakBot TS3 server query plugin framework ##
-##           https://gitlab.com/fearnixxgaming/jeakbot            ##
+##           https://github.com/jeakfrw/core-framework            ##
+##           https://github.com/jeakfrw/pterodactyl-image         ##
 ## ============================================================== ##
-FROM openjdk:8-jdk-alpine
+FROM openjdk:11-jdk-slim
 MAINTAINER FearNixx Technik, <technik@fearnixx.de>
 
 RUN apk update \
