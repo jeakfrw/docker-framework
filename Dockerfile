@@ -9,7 +9,7 @@ MAINTAINER FearNixx Technik, <technik@fearnixx.de>
 RUN apt update \
 	&& apt -y upgrade \
 	&& apt install -y curl ca-certificates openssl git tar unzip bash gcc \
-	&& adduser -D -h /home/container container
+	&& useradd -d /home/container -m container
 
 
 USER container
