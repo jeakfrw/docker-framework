@@ -10,7 +10,7 @@ if [[ -z "$VERSION" ]]; then
     VERSION="1.0.0"
 fi
 
-if [[ "$JEAKBOT_SNAPSHOT" -eq "true" ]]; then
+if [[ "$JEAKBOT_SNAPSHOT" = "true" ]]; then
     VERSION="${VERSION}-SNAPSHOT"
 fi
 
