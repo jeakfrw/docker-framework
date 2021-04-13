@@ -9,10 +9,9 @@ MAINTAINER FearNixx Technik, <technik@fearnixx.de>
 RUN apt update \
 	&& apt -y upgrade \
 	&& apt install -y curl ca-certificates openssl git tar unzip bash gcc libopus-dev python3 python3-pip \
+	&& update-alternatives --install /usr/bin/python python /usr/bin/python3 1 \
 	&& useradd -d /home/container -m container
-
-RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1
-
+	
 USER container
 ENV USER container
 ENV HOME /home/container
