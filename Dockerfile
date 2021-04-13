@@ -11,6 +11,7 @@ RUN apt update \
 	&& apt install -y curl ca-certificates openssl git tar unzip bash gcc libopus-dev python3 python3-pip \
 	&& useradd -d /home/container -m container
 
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 
 USER container
 ENV USER container
