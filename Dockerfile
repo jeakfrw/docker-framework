@@ -8,7 +8,7 @@ MAINTAINER FearNixx Technik, <technik@fearnixx.de>
 
 RUN apt update \
 	&& apt -y upgrade \
-	&& apt install -y curl ca-certificates openssl git tar unzip bash gcc libopus-dev python \
+	&& apt install -y curl ca-certificates openssl git tar unzip bash gcc libopus-dev python3 python3-pip \
 	&& useradd -d /home/container -m container
 
 
