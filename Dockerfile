@@ -20,4 +20,6 @@ WORKDIR /home/container
 
 COPY ./entrypoint.sh /entrypoint.sh
 
+COPY jeakbot-1.2.2-SNAPSHOT.tar.gz /opt/jeakbot.tar.gz
+
 CMD ["/bin/bash", "/entrypoint.sh"]

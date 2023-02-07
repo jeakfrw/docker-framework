@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# /entypoint.sh
+# /entrypoint.sh
 ## ============================================== ##
 ## Entrypoint script for the Jeak-Framework docker image ##
 ## ============================================== ##
@@ -14,16 +14,16 @@ if [[ "$JEAKBOT_SNAPSHOT" = "true" ]]; then
     VERSION="${VERSION}-SNAPSHOT"
 fi
 
-ARTIFACT_NAME="jeakbot-${VERSION}.tar.gz"
+ARTIFACT_NAME="/opt/jeakbot.tar.gz"
 DIST_REPO="https://nexus.fearnixx.de/repository/jeakbot-dist"
 
 ## Install / Update ##
 if [[ ! -e jeakbot.jar ]]; then
-    printf "Installing Jeakbot V: ${VERSION}...\n"
-    if ! curl -o "$ARTIFACT_NAME" "${DIST_REPO}/${ARTIFACT_NAME}"; then
-        printf "Failed to download artifact!\n"
-        exit 1
-    fi
+#    printf "Installing Jeakbot V: ${VERSION}...\n"
+#    if ! curl -o "$ARTIFACT_NAME" "${DIST_REPO}/${ARTIFACT_NAME}"; then
+#        printf "Failed to download artifact!\n"
+#        exit 1
+#    fi
 
     printf "Extracting archive...\n"
     if ! tar -xf "$ARTIFACT_NAME"; then
